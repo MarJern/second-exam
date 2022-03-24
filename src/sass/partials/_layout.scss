@@ -1,0 +1,29 @@
+body {
+    background-color: $colour-primary;
+    color: white;
+}
+
+.button {
+    background: $colour-ui-primary;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 7px $colour-ui-shadow;
+    transition: all 0.4s;
+}
+
+.button:hover {
+    box-shadow: 6px 10px 11px 0px $colour-ui-shadow;
+    -webkit-box-shadow: 6px 10px 11px 0px $colour-ui-shadow;
+    -moz-box-shadow: 6px 10px 11px 0px $colour-ui-shadow;
+}
+footer {
+    color: $colour-primary;
+    background-color: $colour-secondary;
+    margin-top: 1rem;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
