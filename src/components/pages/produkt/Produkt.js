@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { API_URL} from "../../constants/api";
-import Heading from "../layout/Heading";
+import { API_URL} from "../../../constants/api";
+import Heading from "../../layout/Heading";
 
 function UniDetail() {
 	const [uni, setUni] = useState(null);

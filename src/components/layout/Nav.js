@@ -17,25 +17,15 @@ function CreateNav() {
 
 	return (
 		<Navbar expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="/">Floww media</Navbar.Brand>
+            <Navbar.Brand href="/" className="logo"><span className="bold">Floww</span> <span className="light">media</span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <NavLink to="/" className="nav-link">
-                        Hjem
-                    </NavLink>
-					<NavLink to="/tjenester" className="nav-link">
-                        Tjenester
-                    </NavLink>
-					<NavLink to="/seo" className="nav-link">
-                        Om SEO
-                    </NavLink>
-					<NavLink to="/oss" className="nav-link">
-                        Om oss
-                    </NavLink>
-					<NavLink to="/kontakt" className="nav-link">
-                        Kontakt oss
-                    </NavLink>
+                    <NavLink to="/" className="nav-link">Hjem</NavLink>
+					<NavLink to="/tjenester" className="nav-link">Tjenester</NavLink>
+					<NavLink to="/seo" className="nav-link">Om SEO</NavLink>
+					<NavLink to="/oss" className="nav-link">Om oss</NavLink>
+					<NavLink to="/kontakt" className="nav-link">Kontakt oss</NavLink>
                     {/* <NavLink to="/detail/:param" className="nav-link">
                         Detail
                     </NavLink> */}
@@ -44,7 +34,7 @@ function CreateNav() {
                             | <NavLink to="/admin" className="nav-link">Admin</NavLink> | <button onClick={logout}>Logg ut</button>
                         </>
                     ) : (
-                        <NavLink to="/login" className="nav-link">Login</NavLink>
+                        <NavLink to="/login" className="nav-link hide">Logg inn</NavLink>
                     )}
                 </Nav>
             </Navbar.Collapse>

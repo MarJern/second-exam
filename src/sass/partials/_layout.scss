@@ -1,6 +1,7 @@
 body {
     background-color: $colour-primary;
     color: white;
+    font-family: $font-primary;
 }
 
 .button {
@@ -25,5 +26,14 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+
+    .footer__link {
+        font-size: 0.7rem;
+        color: $colour-primary;
+    }
+}
+
+.hide {
+    display: none;
 }

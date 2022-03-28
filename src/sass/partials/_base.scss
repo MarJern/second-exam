@@ -1,11 +1,12 @@
 //colours
-
 $colour-primary:  #252d30;
 $colour-secondary: #ffffff;
-$colour-ui-primary: #D1C5BC;
-$colour-ui-accent: #383C42;
+$colour-ui-primary: #95c5ab;
+$colour-ui-accent: #f07d75;
 $colour-ui-shadow: rgba(0, 0, 0, 0.1);
 
 //Typography
-
-$font-primary: "Open Sans", sans-serif;
+$font-primary: lato, sans-serif;
+//Available in 400, 600.
+$font-heading: open-sans, sans-serif;
+//Available in 300, 400, 500, 700.
