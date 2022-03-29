@@ -24,11 +24,9 @@ export default function LoginForm() {
 	const [submitting, setSubmitting] = useState(false);
 	const [loginError, setLoginError] = useState(null);
 
-	const history = useNavigate();
+	const navigate = useNavigate();
 
-	const { register, 
-		handleSubmit, 
-		errors } = useForm({
+	const { register, handleSubmit, formState: { errors } }= useForm({
 		resolver: yupResolver(schema),
 	});
 
@@ -44,7 +42,7 @@ export default function LoginForm() {
 			const response = await axios.post(url, data);
 			console.log("response", response.data);
 			setAuth(response.data);
-			history.push("/dashboard");
+			navigate.push("/dashboard");
 		} catch (error) {
 			console.log("error", error);
 			setLoginError(error.toString());
@@ -63,7 +61,6 @@ export default function LoginForm() {
 						<Form.Input type="text" name="username" placeholder="Brukernavn" ref={register} className="my-2"/>
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</Col>
-
 					<Col sm={4} md={6} className="p-0">
 						<Form.Input name="password" placeholder="Passord" ref={register} type="password" />
 						{errors.password && <FormError>{errors.password.message}</FormError>}
