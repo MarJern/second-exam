@@ -16,8 +16,8 @@ import AuthContext from "../../context/AuthContext";
 const url = BASE_URL + TOKEN_PATH;
 
 const schema = yup.object().shape({
-	username: yup.string().required("Vennligst oppgi korrekt brukernavn"),
-	password: yup.string().required("Vennligst oppgi korrekt passord"),
+	username: yup.string().required("Vennligst oppgi korrekt brukernavn.").min(3, "Navnet ditt må bestå av minst tre bokstaver."),
+	password: yup.string().required("Vennligst oppgi korrekt passord.").min(3, "Navnet ditt må bestå av minst tre bokstaver."),
 });
 
 export default function LoginForm() {
@@ -26,9 +26,13 @@ export default function LoginForm() {
 
 	const navigate = useNavigate();
 
-	const { register, handleSubmit, formState: { errors } }= useForm({
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	  } = useForm({
 		resolver: yupResolver(schema),
-	});
+	  });
 
 	const [, setAuth] = useContext(AuthContext);
 
@@ -58,11 +62,11 @@ export default function LoginForm() {
 			<Form disabled={submitting}>
 				<Form.Group>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Input type="text" name="username" placeholder="Brukernavn" ref={register} className="my-2"/>
+						<Form.Control type="text" name="username" placeholder="Brukernavn" {...register('username')} className="my-2"/>
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</Col>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Input name="password" placeholder="Passord" ref={register} type="password" />
+						<Form.Control name="password" placeholder="Passord" {...register('password')} type="password" />
 						{errors.password && <FormError>{errors.password.message}</FormError>}
 					</Col>
 					<Button>{submitting ? "Logger inn" : "Logg inn"}</Button>

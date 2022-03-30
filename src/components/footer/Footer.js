@@ -9,6 +9,7 @@ export default function Footer() {
 
     return (
         <footer className="fluid">
+            <Router>
             <Row>
                 <Col className="footer__logo"><span className="bold">Floww</span> <span className="light">media</span>
                 </Col>
@@ -22,15 +23,16 @@ export default function Footer() {
                 </Col>
             </Row>
             <Row className="flex-column">
-                <Router>
+                {/* <Router> */}
                     <FooterNav />
-                </Router>
+                {/* </Router> */}
             </Row>
             <Row>
-                <Router>
+                {/* <Router> */}
                     <Link to="/personvern" className="nav-link footer__link">Rettningslinjer for personvern</Link>
-                </Router>
+                {/* </Router> */}
             </Row>
+            </Router>
         </footer>
     );
 }

@@ -11,9 +11,10 @@ import { DEFAULT_VALUES} from "../../constants/reg"
 import FormError from "./FormError"
 
 let userSchema = yup.object().shape({
-	name: yup.string().required("Ditt navn").min(3, "Navnet ditt må bestå av minst tre bokstaver."),
-	email: yup.string().required("Din e-postadresse").email("Vennlist oppgi en gyldig e-postadresse."),
-	message: yup.string().required("Skriv din melding her").min(10, "Meldingen må være på minimum 10 tegn.") ,
+	name: yup.string().required("Navnet ditt må bestå av minst tre bokstaver.").min(3, "Navnet ditt må bestå av minst tre bokstaver."),
+	email: yup.string().required("Vennlist oppgi en gyldig e-postadresse.").email("Vennlist oppgi en gyldig e-postadresse."),
+	firm: yup.string().required("Firmanavn må bestå av minst to bokstaver.").min(2, "Firmanavn må bestå av minst to bokstaver."),
+	message: yup.string().required("Meldingen må være på minimum 10 tegn").min(10, "Meldingen må være på minimum 10 tegn.") ,
 });
 
 function ContactForm() {
@@ -48,6 +49,10 @@ function ContactForm() {
 					<Col sm={4} md={6} className="p-0">
 						<Form.Control type="text" placeholder="E-post" {...register("email")} className="my-2" />
 						{errors.email && <FormError>{errors.email.message}</FormError>}
+					</Col>
+					<Col sm={4} md={6} className="p-0">
+						<Form.Control type="text" placeholder="Firma" {...register("firm")} className="my-2" />
+						{errors.firm && <FormError>{errors.firm.message}</FormError>}
 					</Col>
 					<Col sm={4} md={6} className="p-0">
 						<Form.Control as ="textarea" type="text" placeholder="Skriv meldingen din" {...register("message")} className="my-2 message" />

@@ -7,6 +7,10 @@ import Seo from '../pages/seo/SEO';
 import Tjenester from "../pages/tjenester/Tjenester";
 import { AuthProvider } from "../../context/AuthContext";
 import CreateNav from './Nav';
+import Container from "react-bootstrap/Container";
+import CreateBreadcrumb from "./Breadcrumb";
+import { Breadcrumb } from "react-bootstrap";
+import Footer from "../footer/Footer"
 
 
 function Layout() {
@@ -23,6 +27,7 @@ function Layout() {
                     <Route path="/kontakt" element={<Kontakt />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
+                {/* <Footer/> */}
             </Router>
         </AuthProvider>
 	);
