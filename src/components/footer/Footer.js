@@ -10,18 +10,18 @@ export default function Footer() {
     return (
         <footer className="fluid">
             <Router>
-            <Row>
-                <Col className="footer__logo"><span className="bold">Floww</span> <span className="light">media</span>
-                </Col>
-                <Col className="footer__contact" >
+            <Col>
+                <div className="footer__logo footer__company"><span className="bold">Floww</span> <span className="light">media</span>
+                </div>
+                <div className="footer__contact footer__company" >
                     <img src={email} alt=""/>
                     <p className='footer__link'>kontakt@flowwmedia.no</p>
-                </Col>
-                <Col className="footer__contact" >
+                </div>
+                <Col className="footer__contact footer__company" >
                     <img src={phone} alt=""/>
                     <p className='footer__link'>458 43 554</p>
                 </Col>
-            </Row>
+            </Col>
             <Row className="flex-column">
                 {/* <Router> */}
                     <FooterNav />

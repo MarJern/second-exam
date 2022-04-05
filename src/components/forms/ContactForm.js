@@ -58,7 +58,7 @@ function ContactForm() {
 						<Form.Control as ="textarea" type="text" placeholder="Skriv meldingen din" {...register("message")} className="my-2 message" />
 						{errors.message && <FormError>{errors.message.message}</FormError>}
 					</Col>
-					<Button variant="primary" type="submit">
+					<Button variant="primary" type="submit" className="button">
 						Send
 					</Button>
 				</Form.Group>

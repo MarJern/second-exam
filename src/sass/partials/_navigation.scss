@@ -1,0 +1,63 @@
+a {
+    color: $colour-primary;
+    text-decoration: none;
+    font-weight: 700;
+}
+.navbar-toggler {
+    border: none;
+    color: white;
+}
+.navbar-toggler-icon {
+    color: white !important;
+}
+.nav-link {
+    color: white !important;
+}
+.active {
+    color: $colour-ui-accent !important;
+}
+.button {
+    background: $colour-ui-primary;
+    border: none;
+    color: $colour-primary;
+    text-decoration: none;
+    font-weight: 700;
+    padding: .5 1rem;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 7px $colour-ui-shadow;
+    transition: all 0.4s;
+}
+.button:visited {
+    box-shadow: $shadow;
+    background: $colour-ui-primary;
+}
+.btn-primary:hover {
+    box-shadow: $shadow;
+    background: $colour-ui-primary;
+    color: $colour-primary;
+}
+.button:hover {
+    box-shadow: $shadow;
+}
+.button:active {
+    box-shadow: $shadow;
+}
+.button__link {
+    text-decoration: none;
+    text-transform: none;
+}
+.breadcrumb_link {
+    color: white !important;
+    font-weight: 300;
+    font-size: 0.6rem;
+}
+ 
+.breadcrumb_link:hover {
+    font-weight: 700;
+    color: $colour-ui-accent;
+}
+.breadcrumb_link:active {
+    color: $colour-ui-accent;
+}

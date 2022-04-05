@@ -5,7 +5,7 @@ export default function CreateBreadcrumb({link}) {
     return (
         <Breadcrumb aria-label="breadcrumb" className="breadcrumb_wrapper">
                 <Breadcrumb.Item href="#" className="breadcrumb_link">
-                    <Link to="/">Home</Link>
+                    <Link to="/" className="breadcrumb_link">Home</Link>
                 </Breadcrumb.Item>
                 {/* <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
                     Library

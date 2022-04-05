@@ -16,7 +16,7 @@ function CreateNav() {
 	}
 
 	return (
-		<Navbar expand="lg" bg="dark" variant="dark">
+		<Navbar expand="lg" variant="dark" className="px-3">
             <Navbar.Brand href="/" className="logo"><span className="bold">Floww</span> <span className="light">media</span></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

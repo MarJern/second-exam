@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1800 900" style="enable-background:new 0 0 1800 900;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#252D30;}
+	.st1{fill:#F07D75;}
+	.st2{fill:#95C5AB;}
+</style>
+<g>
+	<rect x="0.5" y="0.5" class="st0" width="1799" height="899"/>
+	<path class="st0" d="M1799,1v898H1V1H1799 M1800,0H0v900h1800V0L1800,0z"/>
+</g>
+<g id="left">
+	<g>
+		<rect x="249" y="135" class="st1" width="6" height="43"/>
+	</g>
+	<g>
+		<rect x="304" y="399" class="st1" width="6" height="43"/>
+	</g>
+	<g>
+		<rect x="293" y="520" class="st1" width="43" height="6"/>
+	</g>
+	<g>
+		<rect x="304" y="207" class="st2" width="6" height="43"/>
+	</g>
+	<g>
+		<rect x="290" y="614" class="st2" width="6" height="43"/>
+	</g>
+	<g>
+		<rect x="250" y="320" class="st2" width="43" height="6"/>
+	</g>
+</g>
+<g id="rigth">
+	<g>
+		<rect x="1389" y="673" class="st1" width="6" height="43"/>
+	</g>
+	<g>
+		<rect x="1392" y="592" class="st1" width="43" height="6"/>
+	</g>
+	<g>
+		<rect x="1435" y="458" class="st2" width="6" height="43"/>
+	</g>
+	<g>
+		<rect x="1353" y="768" class="st2" width="6" height="43"/>
+	</g>
+	<g>
+		<rect x="1516" y="434" class="st2" width="43" height="6"/>
+	</g>
+</g>
+</svg>
