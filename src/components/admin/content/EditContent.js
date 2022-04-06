@@ -6,14 +6,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../../common/FormError";
 import useAxios from "../../../hooks/useAxios";
 import Heading from "../../layout/Heading";
-import DashboardPage from "../DashboardPage";
-import DeletePostButton from "./DeletePostButton";
+import AdminPage from "../AdminPage";
+import DeleteButton from "./DeleteButton";
 
 const schema = yup.object().shape({
 	title: yup.string().required("Title is required"),
 });
 
-export default function EditPost() {
+export default function EditContent() {
 	const [post, setPost] = useState(null);
 	const [updated, setUpdated] = useState(false);
 	const [fetchingPost, setFetchingPost] = useState(true);
@@ -76,7 +76,7 @@ export default function EditPost() {
 	if (fetchError) return <div>Error loading post</div>;
 
 	return (
-		<DashboardPage>
+		<AdminPage>
 			<Heading content="Edit Post" />
 
 			<form onSubmit={handleSubmit(onSubmit)}>
@@ -96,9 +96,9 @@ export default function EditPost() {
 
 					<button>Update</button>
 					<hr />
-					<DeletePostButton id={post.id} />
+					<DeleteButton id={post.id} />
 				</fieldset>
 			</form>
-		</DashboardPage>
+		</AdminPage>
 	);
 }

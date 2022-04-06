@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
 
-export default function PostList() {
+export default function ContentList() {
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -36,7 +36,7 @@ export default function PostList() {
 			{posts.map((media) => {
 				return (
 					<li key={media.id}>
-						<Link to={`/dashboard/posts/edit/${media.id}`}>{media.title.rendered}</Link>
+						<Link to={`/admin/post/edit/${media.id}`}>{media.title.rendered}</Link>
 					</li>
 				);
 			})}

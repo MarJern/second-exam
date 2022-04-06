@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Row  from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import phone from '../../images/phone.svg';
@@ -9,7 +9,6 @@ export default function Footer() {
 
     return (
         <footer className="fluid">
-            <Router>
             <Col>
                 <div className="footer__logo footer__company"><span className="bold">Floww</span> <span className="light">media</span>
                 </div>
@@ -23,16 +22,11 @@ export default function Footer() {
                 </Col>
             </Col>
             <Row className="flex-column">
-                {/* <Router> */}
                     <FooterNav />
-                {/* </Router> */}
             </Row>
             <Row>
-                {/* <Router> */}
                     <Link to="/personvern" className="nav-link footer__link">Rettningslinjer for personvern</Link>
-                {/* </Router> */}
             </Row>
-            </Router>
         </footer>
     );
 }

@@ -1,5 +1,5 @@
 a {
-    color: $colour-primary;
+    color: $colour-secondary;
     text-decoration: none;
     font-weight: 700;
 }
@@ -28,6 +28,10 @@ a {
     margin-bottom: 1rem;
     box-shadow: 0 0 7px $colour-ui-shadow;
     transition: all 0.4s;
+
+    a {
+        color: $colour-primary !important;
+    }
 }
 .button:visited {
     box-shadow: $shadow;

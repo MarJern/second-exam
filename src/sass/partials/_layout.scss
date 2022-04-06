@@ -1,3 +1,8 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 html,
 body {
     height: 100%;
@@ -22,9 +27,6 @@ footer {
     background-color: $colour-secondary;
     margin-top: 1rem;
     padding: 1rem;
-    // position: fixed;
-    // bottom: 0;
-    // left: 0;
     width: 100%;
 
     .footer__company {
@@ -33,7 +35,7 @@ footer {
     .footer__link {
         font-size: 0.7rem;
         color: $colour-primary !important;
-        // font-weight: 300 !important;
+        font-weight: 300 !important;
         padding-left: 0;
     }
     .footer__contact {

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
 
-export default function DeletePostButton({ id }) {
+export default function DeleteButton({ id }) {
 	const [error, setError] = useState(null);
 
 	const http = useAxios();
@@ -31,6 +31,6 @@ export default function DeletePostButton({ id }) {
 	);
 }
 
-DeletePostButton.propTypes = {
+DeleteButton.propTypes = {
 	id: PropTypes.number.isRequired,
 };
