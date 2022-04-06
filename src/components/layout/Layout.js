@@ -5,6 +5,7 @@ import Kontakt from '../pages/kontakt/Kontakt';
 import Oss from '../pages/oss/Oss';
 import Seo from '../pages/seo/SEO';
 import Tjenester from "../pages/tjenester/Tjenester";
+import Admin from "../admin/AdminPage"
 import { AuthProvider } from "../../context/AuthContext";
 import CreateNav from './Nav';
 import Container from "react-bootstrap/Container";
@@ -15,7 +16,7 @@ import Footer from "../footer/Footer"
 
 function Layout() {
 	return (
-        <AuthProvider>
+        // <AuthProvider>
             <Router>
                 <CreateNav/>
                 <Routes>
@@ -26,10 +27,11 @@ function Layout() {
                     <Route path="/oss" element={<Oss />} />
                     <Route path="/kontakt" element={<Kontakt />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/admin" element={<Admin />} />
                 </Routes>
                 {/* <Footer/> */}
             </Router>
-        </AuthProvider>
+        // </AuthProvider>
 	);
 }
 

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function DashboardMenu() {
+export default function AdminMenu() {
 	return (
 		<nav className="dashboard">
-			Sections: <Link to="/dashboard/posts">Posts</Link>
+			Sections: <Link to="/admin">Posts</Link>
 		</nav>
 	);
 }

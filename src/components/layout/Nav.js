@@ -8,11 +8,11 @@ import AuthContext from "../../context/AuthContext";
 function CreateNav() {
 	const [auth, setAuth] = useContext(AuthContext);
 
-	const history = useNavigate();
+	const navigate = useNavigate();
 
 	function logout() {
 		setAuth(null);
-		history.push("/");
+		navigate("/");
 	}
 
 	return (
@@ -31,7 +31,7 @@ function CreateNav() {
                     </NavLink> */}
                     {auth ? (
                         <>
-                            | <NavLink to="/admin" className="nav-link">Admin</NavLink> | <button onClick={logout}>Logg ut</button>
+                            <NavLink to="/admin" className="nav-link">Admin</NavLink><button className="button" onClick={logout}>Logg ut</button>
                         </>
                     ) : (
                         <NavLink to="/login" className="nav-link hide">Logg inn</NavLink>

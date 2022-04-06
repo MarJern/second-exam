@@ -46,7 +46,7 @@ export default function LoginForm() {
 			const response = await axios.post(url, data);
 			console.log("response", response.data);
 			setAuth(response.data);
-			navigate.push("/dashboard");
+			navigate("/admin");
 		} catch (error) {
 			console.log("error", error);
 			setLoginError(error.toString());
@@ -57,9 +57,9 @@ export default function LoginForm() {
 
 	return (
 	
-		<Container onSubmit={handleSubmit(onSubmit)}>
+		<Container >
 			{loginError && <FormError>{loginError}</FormError>}
-			<Form disabled={submitting}>
+			<Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group>
 					<Col sm={4} md={6} className="p-0">
 						<Form.Control type="text" name="username" placeholder="Brukernavn" {...register('username')} className="my-2"/>
@@ -69,7 +69,7 @@ export default function LoginForm() {
 						<Form.Control name="password" placeholder="Passord" {...register('password')} type="password" />
 						{errors.password && <FormError>{errors.password.message}</FormError>}
 					</Col>
-					<Button>{submitting ? "Logger inn" : "Logg inn"}</Button>
+					<Button type="submit">{submitting ? "Logger inn" : "Logg inn"}</Button>
 				</Form.Group>
 			</Form>
 		</Container>

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Heading from "../layout/Heading";
-import DashboardMenu from "./DashboardMenu";
+import DashboardMenu from "../admin/AdminMenu";
 
 export default function DashboardPage({ children }) {
 	return (
