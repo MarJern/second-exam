@@ -62,25 +62,27 @@ export default function AddContent() {
 	}
 
 	return (
-		<AdminPage>
-			<CreateBreadcrumb link="Legg til bloggpost" />
+		// <AdminPage>
+		<Container>
+			<CreateBreadcrumb link="Legg til post" />
 			{/* <Heading title="Om oss" /> */}
 			{serverError && <FormError>{serverError}</FormError>}
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group disabled={submitting}>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Control type="text" placeholder="Tittel" {...register("title")} className="my-2" />
+						<Form.Control name="title" type="text" placeholder="Tittel" {...register("title")} className="my-2" />
 						{errors.title && <FormError>{errors.title.message}</FormError>}
 					</Col>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Control as="textarea" type="text" placeholder="Legg til bloggartikkel" {...register("message")} className="my-2 message"/>
+						<Form.Control name="content" as="textarea" type="text" placeholder="Skriv tekst her" {...register("message")} className="my-2 message"/>
 					</Col>
 					<Col sm={4} md={6} className="p-0">
-						<MediaDropdown register={register} />
+						<MediaDropdown />
 					</Col>
 					<Button type="submit" className="button">{submitting ? "Submitting..." : "Submit"}</Button>
 				</Form.Group>
 			</Form>
-		</AdminPage>
+			</Container>
+		// </AdminPage>
 	);
 }

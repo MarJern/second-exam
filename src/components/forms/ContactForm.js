@@ -40,7 +40,7 @@ function ContactForm() {
 	return (
 		<Container className="p-0">
 			{submitted && <Alert variant="success">Success</Alert>}
-			<Form onSubmit={handleSubmit(onSubmit)}>
+			<Form onSubmit={handleSubmit(onSubmit)} action="" method="POST">
 				<Form.Group>
 					<Col sm={4} md={6} className="p-0">
 						<Form.Control type="text" placeholder="Navn" {...register("name")} className="my-2" />

@@ -8,6 +8,7 @@ import Tjenester from "../pages/tjenester/Tjenester";
 import Admin from "../admin/AdminPage"
 import ContentPage from "../admin/content/ContentPage";
 import AddContent from "../admin/content/AddContent";
+import EditContent from "../admin/content/EditContent";
 import { AuthProvider } from "../../context/AuthContext";
 import CreateNav from './Nav';
 import Container from "react-bootstrap/Container";
@@ -31,6 +32,7 @@ function Layout() {
             <Route path="/admin" exact element={<Admin />} />
             <Route path="/admin/content" exact element={<ContentPage />} />
             <Route path="/admin/content/add" element={<AddContent />} />
+            <Route path="/admin/content/edit/:id" element={<EditContent />} />
         </Routes>
         </>
 	);

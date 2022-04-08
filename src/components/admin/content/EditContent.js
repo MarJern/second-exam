@@ -8,6 +8,12 @@ import useAxios from "../../../hooks/useAxios";
 import Heading from "../../layout/Heading";
 import AdminPage from "../AdminPage";
 import DeleteButton from "./DeleteButton";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import CreateBreadcrumb from "../../layout/Breadcrumb";
+import { usePageTitle } from "../../common/PageTitle";
 
 const schema = yup.object().shape({
 	title: yup.string().required("Title is required"),
@@ -76,29 +82,29 @@ export default function EditContent() {
 	if (fetchError) return <div>Error loading post</div>;
 
 	return (
-		<AdminPage>
-			<Heading content="Edit Post" />
+		// <AdminPage>
+		<Container>
+			<CreateBreadcrumb link="Rediger post" />
+			{/* <Heading content="Edit Post" /> */}
 
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<Form onSubmit={handleSubmit(onSubmit)}>
 				{updated && <div className="success">The post was updated</div>}
-
 				{updateError && <FormError>{updateError}</FormError>}
-
-				<fieldset disabled={updatingPost}>
-					<div>
-						<input name="title" defaultValue={post.title.rendered} placeholder="Title" ref={register} />
+				<Form.Group disabled={updatingPost}>
+					<Col sm={4} md={6} className="p-0">
+						<Form.Control name="title" type="text" defaultValue={post.title.rendered} placeholder="Tittel" {...register("title")} className="my-2"/>
 						{errors.title && <FormError>{errors.title.message}</FormError>}
-					</div>
+					</Col>
+					<Col sm={4} md={6} className="p-0">
+						<Form.Control name="content" as="textarea" type="text" defaultValue={post.content.rendered} placeholder="Skriv tekst her" className="my-2 message" />
+					</Col>
 
-					<div>
-						<input name="content" defaultValue={post.content.rendered} placeholder="Content" ref={register} />
-					</div>
-
-					<button>Update</button>
+					<Button>Update</Button>
 					<hr />
 					<DeleteButton id={post.id} />
-				</fieldset>
-			</form>
-		</AdminPage>
+				</Form.Group>
+			</Form>
+		{/* // </AdminPage> */}
+		</Container>
 	);
 }
