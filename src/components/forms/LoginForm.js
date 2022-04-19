@@ -65,11 +65,11 @@ export default function LoginForm() {
 						<Form.Control type="text" name="username" placeholder="Brukernavn" {...register('username')} className="my-2"/>
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</Col>
-					<Col sm={4} md={6} className="p-0">
+					<Col sm={4} md={6} className="p-0 my-2">
 						<Form.Control name="password" placeholder="Passord" {...register('password')} type="password" />
 						{errors.password && <FormError>{errors.password.message}</FormError>}
 					</Col>
-					<Button type="submit">{submitting ? "Logger inn" : "Logg inn"}</Button>
+					<Button type="submit" className="button btn btn-primary">{submitting ? "Logger inn" : "Logg inn"}</Button>
 				</Form.Group>
 			</Form>
 		</Container>

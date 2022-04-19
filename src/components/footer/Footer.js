@@ -22,10 +22,12 @@ export default function Footer() {
                 </Col>
             </Col>
             <Row className="flex-column">
-                    <FooterNav />
+                <FooterNav />
             </Row>
             <Row>
+                <nav>
                     <Link to="/personvern" className="nav-link footer__link">Rettningslinjer for personvern</Link>
+                </nav>
             </Row>
         </footer>
     );

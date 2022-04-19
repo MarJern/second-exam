@@ -1,6 +1,10 @@
-h1, h2, h3, h4, li {
+h1, h2, h3, h4 {
     font-family: $font-heading;
     font-weight: 500;
+    // text-align: center;
+}
+.heading {
+    margin-bottom: 2rem;
     text-align: center;
 }
 .bold {
@@ -9,9 +13,16 @@ h1, h2, h3, h4, li {
 .light {
     font-weight: 300;
 }
-
-.logo {
-    .light {
-        color: $colour-ui-primary;
-    }
+.component__title {
+    color: $colour-ui-accent;
+}
+.button__header {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.intro__text {
+    font-weight: 400;
+}
+.email {
+    text-decoration: underline;
 }

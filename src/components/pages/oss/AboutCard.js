@@ -6,7 +6,7 @@ import Row  from "react-bootstrap/Row";
 
 export default function AboutCard () {
     return (
-        <Card style={{ width: '18rem' }} className="mb-3 profile__card">
+        <Card style={{ width: '18rem' }} className="profile__card page__component">
             <div className="row no-gutters">
                 <div>
                     <Card.Body className="p-0">
@@ -19,7 +19,7 @@ export default function AboutCard () {
                                 <Card.Text>Daglig leder</Card.Text>
                                 <ListGroup className="list-group-flush profile__list">
                                     <ListGroupItem className="profile__list-item" border="none" >458 43 554</ListGroupItem>
-                                    <ListGroupItem className="profile__list-item" border="none" >sm@flowwmedia.no</ListGroupItem>
+                                    <ListGroupItem className="profile__list-item email" border="none" >sm@flowwmedia.no</ListGroupItem>
                                 </ListGroup>
                             </div>
                         </Row>

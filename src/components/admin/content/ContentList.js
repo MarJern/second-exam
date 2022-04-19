@@ -36,7 +36,7 @@ export default function ContentList() {
 			{posts.map((media) => {
 				return (
 					<li key={media.id}>
-						<Link to={`/admin/post/edit/${media.id}`}>{media.title.rendered}</Link>
+						<Link to={`/admin/content/edit/${media.id}`}>{media.title.rendered}</Link>
 					</li>
 				);
 			})}

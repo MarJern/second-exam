@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from '../pages/home/HomePage';
 import Login from '../pages/login/LoginPage';
+import Personvern from '../pages/personvern/Personvern';
 import Kontakt from '../pages/kontakt/Kontakt';
 import Oss from '../pages/oss/Oss';
 import Seo from '../pages/seo/SEO';
@@ -29,6 +30,7 @@ function Layout() {
             <Route path="/oss" element={<Oss />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/personvern" element={<Personvern />} />
             <Route path="/admin" exact element={<Admin />} />
             <Route path="/admin/content" exact element={<ContentPage />} />
             <Route path="/admin/content/add" element={<AddContent />} />

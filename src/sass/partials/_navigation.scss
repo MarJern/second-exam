@@ -1,15 +1,32 @@
-a {
+.nav__bar {
+    background-color: $colour-ui-shadow;
+    margin-bottom: 1rem;
+}
+a, li {
     color: $colour-secondary;
     text-decoration: none;
     font-weight: 700;
     font-family: $font-heading;
 }
+ul {
+    padding-left: 0 !important;
+    list-style: none;
+    li {
+        font-weight: 300;
+        font-family: $font-primary;
+    }
+}
+.navbar-collapse {
+    // background-color: $colour-ui-shadow;
+    padding: 1rem 0;
+}
 .navbar-toggler {
-    border: none;
+    border: none !important;
     color: white;
 }
 .navbar-toggler-icon {
     color: white !important;
+    border: none;
 }
 .nav-link {
     color: white !important;
@@ -25,6 +42,7 @@ a {
     font-weight: 700;
     padding: .5 1rem;
     width: 100%;
+    // max-width: 200px;
     border-radius: 5px;
     margin-bottom: 1rem;
     box-shadow: 0 0 7px $colour-ui-shadow;
@@ -65,4 +83,7 @@ a {
 }
 .breadcrumb_link:active {
     color: $colour-ui-accent;
+}
+.logout__btn {
+ max-width: 100px;
 }

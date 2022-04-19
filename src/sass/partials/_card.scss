@@ -1,0 +1,26 @@
+.profile__card {
+    background-color: $colour-primary;
+    border: none;
+
+    .profile__flex{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .profile__image__wrapper {
+        width: 50%;
+    }
+    .profile__info {
+        max-width: 50%;
+    }
+    .profile__list-item {
+        background-color: $colour-primary;
+        border: none;
+        color: white;
+        font-size: 0.8rem;
+        padding: 0;
+    }
+}
+.tjeneste__card {
+    background-color: $colour-primary;
+    border: none;
+}

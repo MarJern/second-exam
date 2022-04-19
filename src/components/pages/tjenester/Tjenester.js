@@ -2,7 +2,11 @@ import Heading from "../../layout/Heading";
 import Container from "react-bootstrap/Container";
 import CreateBreadcrumb from "../../layout/Breadcrumb";
 import { usePageTitle } from "../../common/PageTitle";
-import desk from "../../../images/desk.jpg";
+import img from "../../../images/people.jpg";
+import H2Title from "../../layout/H2Title";
+import H3Title from '../../layout/H3Title';
+import CtaButton from "../../layout/CtaButton";
+import TjenesterCard from "./TjenesterCard";
 
 export default function Tjenester() {
 	const [page_title, setPageTitle] = usePageTitle("Tjenester | Floww media");
@@ -12,24 +16,14 @@ export default function Tjenester() {
 			<Heading title="Tjenester" />
 			<main className="wrapper">
 				<section>
-					<div>
-						<img className="image" src={desk} alt="BigCo Inc. logo"/>
-					</div>
+					<img className="image" src={img} alt="Workdesk with SEO-analysis shown on I-phone"/>
 				</section>
-				<article>
-					<h2>SEO-optimalisering</h2>
-					<p>90% av all aktivitet på internett starter med et søk i Google. 70% av disse forholder seg kun til første resultatside og 60% forholder seg kun til de fem øverste resultatene av det organiske søket.</p>
-					<p>Jobber du strategisk med SEO (søkemotoroptimalisering), vil bedriften din få mer tyngde til å rangere høyere på viktige søkeord i Google, og dermed sikre mer relevant og lønnsom trafikk til nettsiden.</p>
-					<h3>Hva kan vi bistå deg med</h3>
-					<ul>
-						<li>SEO-strategi</li>
-						<li>SEO-analyser</li>
-						<li>Søkeordsanalyse</li>
-						<li>Struktur og UX</li>
-						<li>Teknisk SEO</li>
-						<li>SEO-tekster og innhold</li>
-					</ul>
+				<article className="page__component">
+					<TjenesterCard title="SEO" body="Som SEO-spesialist har løftet en rekke bedrifter, innenfor et bredt spekter av bransjer med varierende utgangspunkter, til å bli markedsdominerende på Google. Jeg forstår kundereisen, markedsføring og salg, dette kombinerer jeg for å skape de beste resultatene!" />
+					<TjenesterCard title="Innholdsproduksjon" body="Vi produserer innhold for nettbutikker som fokuserer på synlighet på Google og gode konverteringer. Innholdet blir alltid skrevet for å få til handlingene jeg vil at leserne skal utføre." />
+					<TjenesterCard title="Google-ads" body="Jeg gjør Google-annonsering med målbarhet som betyr at jeg gjør annonsering med full oversikt over kostnader og inntekter, dette betyr at vi fort finner ut hva som fungerer og hva som bør avsluttes. På denne måten tilnærmer vi oss kontinuerlig mer lønnsom annonsering." />
 				</article>
+				<CtaButton text="La oss hjelpe deg med å bygge synlighet på nett" cta="Kontakt oss"/>
 			</main>
 		</Container>
 	);

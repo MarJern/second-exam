@@ -13,12 +13,30 @@ body {
     background-color: $colour-primary;
     color: white;
     font-family: $font-primary;
+    font-weight: 300;
     margin: 0 auto;
+}
+.logo {
+    padding-left: 0.75rem;
+    .light {
+        color: $colour-ui-primary;
+    }
 }
 .wrapper {
     flex: 1 0 auto;
-    padding: 0 1rem;
     margin: 0 auto;
+}
+.page__component {
+    margin-bottom: 2rem;
+}
+.nowrap {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.wave__text {
+    max-width: 200px;
+    font-weight: 400;
+    text-decoration: underline;
 }
 footer {
     flex-shrink: 0; 
@@ -58,8 +76,11 @@ footer {
     background-attachment: fixed;
     background-size: cover;
     position: relative;
-    height: 50vh;
+    height: 40vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .hero__text {
         // text-align: center;
@@ -69,32 +90,14 @@ footer {
         // transform: translate(-50%, -50%);
         // height: 100vh;
         // margin-top: 10rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        flex-direction: column;
-    }
-}
-.profile__card {
-    background-color: $colour-primary;
-    border: none;
-
-    .profile__flex{
-        display: flex;
-        flex-wrap: nowrap;
-    }
-    .profile__image__wrapper {
-        width: 50%;
-    }
-    .profile__info {
-        max-width: 50%;
-    }
-    .profile__list-item {
-        background-color: $colour-primary;
-        border: none;
-        color: white;
-        font-size: 0.8rem;
-        padding: 0;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // align-content: center;
+        // flex-direction: column;
+        text-align: left;
+        max-width: 80%;
+        margin-bottom: 0;
+        font-size: 2.2rem;
     }
 }
