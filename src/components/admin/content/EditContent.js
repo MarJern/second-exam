@@ -29,9 +29,9 @@ export default function EditContent() {
 	const [fetchError, setFetchError] = useState(null);
 	const [updateError, setUpdateError] = useState(null);
 
-	const { register, handleSubmit, errors } = useForm({
+	const { register, handleSubmit, formState: { errors }} = useForm({
 		resolver: yupResolver(schema),
-	});
+	  });
 
 	const http = useAxios();
 

@@ -27,9 +27,9 @@ function CreateNav() {
 					<NavLink to="/seo" className="nav-link">Om SEO</NavLink>
 					<NavLink to="/oss" className="nav-link">Om oss</NavLink>
 					<NavLink to="/kontakt" className="nav-link">Kontakt oss</NavLink>
-                    {/* <NavLink to="/detail/:param" className="nav-link">
+                    <NavLink to="/detail/:param" className="nav-link">
                         Detail
-                    </NavLink> */}
+                    </NavLink>
                     {auth ? (
                         <>
                             <NavLink to="/admin" className="nav-link">Admin</NavLink><button className="button logout__btn" onClick={logout}>Logg ut</button>

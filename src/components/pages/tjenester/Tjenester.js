@@ -7,9 +7,40 @@ import H2Title from "../../layout/H2Title";
 import H3Title from '../../layout/H3Title';
 import CtaButton from "../../layout/CtaButton";
 import TjenesterCard from "./TjenesterCard";
+import { useState, useEffect } from "react";
+import useAxios from "../../../hooks/useAxios";
 
-export default function Tjenester() {
-	const [page_title, setPageTitle] = usePageTitle("Tjenester | Floww media");
+export default function ContentList() {
+	const [page_title, setPageTitle] = usePageTitle("Våre tjenester | SEO, innholdsproduksjon Floww media");
+
+	const [posts, setPosts] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+
+	const http = useAxios();
+
+	useEffect(function () {
+		async function getMedia() {
+			try {
+				const response = await http.get("wp/v2/posts");
+				console.log("response", response);
+				setPosts(response.data);
+			} catch (error) {
+				console.log(error);
+				setError(error.toString());
+			} finally {
+				setLoading(false);
+			}
+		}
+
+		getMedia();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	if (loading) return <div>Laster innhold...</div>;
+
+	if (error) return <div>{}</div>;
+
 	return (
 		<Container className="wrapper my-3 m-auto">
 			<CreateBreadcrumb link="Tjenester" />
@@ -19,12 +50,16 @@ export default function Tjenester() {
 					<img className="image" src={img} alt="Workdesk with SEO-analysis shown on I-phone"/>
 				</section>
 				<article className="page__component">
-					<TjenesterCard title="SEO" body="Som SEO-spesialist har løftet en rekke bedrifter, innenfor et bredt spekter av bransjer med varierende utgangspunkter, til å bli markedsdominerende på Google. Jeg forstår kundereisen, markedsføring og salg, dette kombinerer jeg for å skape de beste resultatene!" />
-					<TjenesterCard title="Innholdsproduksjon" body="Vi produserer innhold for nettbutikker som fokuserer på synlighet på Google og gode konverteringer. Innholdet blir alltid skrevet for å få til handlingene jeg vil at leserne skal utføre." />
-					<TjenesterCard title="Google-ads" body="Jeg gjør Google-annonsering med målbarhet som betyr at jeg gjør annonsering med full oversikt over kostnader og inntekter, dette betyr at vi fort finner ut hva som fungerer og hva som bør avsluttes. På denne måten tilnærmer vi oss kontinuerlig mer lønnsom annonsering." />
+					{posts.map((tjeneste) => {
+							return (
+								<div key={tjeneste.id} className="edit__list">
+									<TjenesterCard title={tjeneste.title.rendered} body={tjeneste.content} />
+								</div>
+							);
+						})}
 				</article>
 				<CtaButton text="La oss hjelpe deg med å bygge synlighet på nett" cta="Kontakt oss"/>
 			</main>
 		</Container>
 	);
-}
+};
