@@ -40,12 +40,12 @@ export default function TjenesteList() {
 		<Card className="page__component tjeneste__card">
             <Card.Body className="p-0">
 					{posts.map((tjeneste) => {
-						// const {title, content } = tjeneste;
+                        const {id, title, content } = tjeneste;
 							return (
-                                <>
-                                    <h2 className="component__title">{tjeneste.title.rendered}</h2>
-                                    <Card.Text>{tjeneste.content}</Card.Text>
-                                </>
+                                <div key={id}>
+                                    <h2 className="component__title">{title.rendered}</h2>
+                                    <Card.Text>{content.rendered}</Card.Text>
+                                </div>
 							);
 						})}
 				</Card.Body>

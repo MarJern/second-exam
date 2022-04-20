@@ -12,7 +12,7 @@ export default function DeleteButton({ id }) {
 	const url = `/wp/v2/posts/${id}`;
 
 	async function handleDelete() {
-		const confirmDelete = window.confirm("Vil du slette denne posten?");
+		const confirmDelete = window.confirm("Vil du virkelig slette denne posten?");
 
 		if (confirmDelete) {
 			try {
@@ -25,7 +25,7 @@ export default function DeleteButton({ id }) {
 	}
 
 	return (
-		<button type="button" className="delete" onClick={handleDelete}>
+		<button type="button" className="delete__btn button button__link btn-primary" onClick={handleDelete}>
 			{error ? "Error" : "Delete"}
 		</button>
 	);

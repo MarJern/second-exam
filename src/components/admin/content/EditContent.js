@@ -14,9 +14,11 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import CreateBreadcrumb from "../../layout/Breadcrumb";
 import { usePageTitle } from "../../common/PageTitle";
+import CtaButton from "../../layout/CtaButton";
 
 const schema = yup.object().shape({
 	title: yup.string().required("Du må legge til en overskrift"),
+	content: yup.string().required("Beskrivelse av tjenesten må bestå av minimum 30 tegn").min(30, "Beskrivelse av tjenesten må bestå av minimum 30 tegn.")
 });
 
 export default function EditContent() {
@@ -87,7 +89,7 @@ export default function EditContent() {
 		// <AdminPage>
 		<Container>
 			<CreateBreadcrumb link="Rediger post" />
-			{/* <Heading content="Edit Post" /> */}
+			<Heading title="Rediger tjeneste" />
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				{updated && <div className="success">Tjenesten ble oppdatert</div>}
 				{updateError && <FormError>{updateError}</FormError>}
@@ -97,10 +99,10 @@ export default function EditContent() {
 						{errors.title && <FormError>{errors.title.message}</FormError>}
 					</Col>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Control name="content" as="textarea" type="text" defaultValue={post.content.rendered} placeholder="Skriv her" className="my-2 message" />
+						<Form.Control name="content" as="textarea" type="text" defaultValue={post.content.rendered} className="my-2 message" {...register("content")}/>
+						{errors.content && <FormError>{errors.content.message}</FormError>}
 					</Col>
-					<Button>Oppdater tjeneste</Button>
-					<hr />
+					<CtaButton text="" cta="Lagre endringer"/>
 					<DeleteButton id={post.id} />
 				</Form.Group>
 			</Form>

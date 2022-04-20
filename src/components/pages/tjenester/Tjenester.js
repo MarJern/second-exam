@@ -15,7 +15,7 @@ export default function Tjenester() {
 			<Heading title="Tjenester" />
 			<main className="wrapper">
 				<section>
-					<img className="image" src={img} alt="Workdesk with SEO-analysis shown on I-phone"/>
+					<img className="image" src={img} alt="SEO strategi meeting"/>
 				</section>
 				<article className="page__component">
 					<TjenesteList />
