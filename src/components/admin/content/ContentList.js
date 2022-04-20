@@ -34,9 +34,13 @@ export default function ContentList() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	if (loading) return <div>Laster innhold...</div>;
+	if (loading) {
+		return <div>Laster innhold...</div>;
+	}
 
-	if (error) return <div>{}</div>;
+	if (error) {
+		return <div>En feil oppstod {error}</div>;
+	}
 
 	return (
 		<Container>
