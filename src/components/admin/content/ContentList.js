@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useAxios from "../../../hooks/useAxios";
+import Container from "react-bootstrap/Container";
+import CreateBreadcrumb from "../../layout/Breadcrumb";
+import Heading from "../../layout/Heading";
+import { usePageTitle } from "../../common/PageTitle";
+import edit from "../../../images/edit-icon.svg";
 
 export default function ContentList() {
+	const [page_title, setPageTitle] = usePageTitle("Rediger tjenester | Floww media");
+
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -27,19 +34,27 @@ export default function ContentList() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	if (loading) return <div>Loading posts...</div>;
+	if (loading) return <div>Laster innhold...</div>;
 
 	if (error) return <div>{}</div>;
 
 	return (
-		<ul className="posts">
-			{posts.map((media) => {
-				return (
-					<li key={media.id}>
-						<Link to={`/admin/content/edit/${media.id}`}>{media.title.rendered}</Link>
-					</li>
-				);
-			})}
-		</ul>
+		<Container>
+			<main className="wrapper">
+				<CreateBreadcrumb link="Rediger tjenester" />
+				<Heading title="Eksisterende tjenester"/>
+				<p className="intro__text">Trykk på tjenesten du ønsker å redigere eller slette:</p>
+				<nav className="admin__link">
+					{posts.map((tjeneste) => {
+						return (
+							<div key={tjeneste.id} className="edit__list">
+								<img src={edit} alt="" className="edit__icon"/>
+								<Link to={`/admin/content/edit/${tjeneste.id}`} className="edit__link">{tjeneste.title.rendered}</Link>
+							</div>
+						);
+					})}
+				</nav>
+			</main>
+		</Container>
 	);
 }

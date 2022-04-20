@@ -16,12 +16,12 @@ import CreateBreadcrumb from "../../layout/Breadcrumb";
 import { usePageTitle } from "../../common/PageTitle";
 
 const schema = yup.object().shape({
-	title: yup.string().required("Vennligst angi tittel på bloggost"),
-	message: yup.string().required("Meldingen må være på minimum 10 tegn").min(10, "Meldingen må være på minimum 10 tegn."),
+	title: yup.string().required("Legg til overskrift"),
+	message: yup.string().required("Beskrivelsen må være på minimum 30 tegn").min(30, "Beskrivelsen må være på minimum 30 tegn."),
 });
 
 export default function AddContent() {
-	const [page_title, setPageTitle] = usePageTitle("Opprett bloggpost | Floww media");
+	const [page_title, setPageTitle] = usePageTitle("Legg til tjeneste | Floww media");
 
 	const [submitting, setSubmitting] = useState(false);
 	const [serverError, setServerError] = useState(null);
@@ -64,7 +64,7 @@ export default function AddContent() {
 	return (
 		// <AdminPage>
 		<Container>
-			<CreateBreadcrumb link="Legg til post" />
+			<CreateBreadcrumb link="Legg til tjeneste" />
 			{/* <Heading title="Om oss" /> */}
 			{serverError && <FormError>{serverError}</FormError>}
 			<Form onSubmit={handleSubmit(onSubmit)}>
@@ -74,12 +74,9 @@ export default function AddContent() {
 						{errors.title && <FormError>{errors.title.message}</FormError>}
 					</Col>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Control name="content" as="textarea" type="text" placeholder="Skriv tekst her" {...register("message")} className="my-2 message"/>
+						<Form.Control name="content" as="textarea" type="text" placeholder="Skriv her" {...register("message")} className="my-2 message"/>
 					</Col>
-					<Col sm={4} md={6} className="p-0">
-						<MediaDropdown />
-					</Col>
-					<Button type="submit" className="button">{submitting ? "Submitting..." : "Submit"}</Button>
+					<Button type="submit" className="button">{submitting ? "Lagres..." : "Legg til"}</Button>
 				</Form.Group>
 			</Form>
 			</Container>

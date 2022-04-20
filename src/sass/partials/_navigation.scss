@@ -2,7 +2,7 @@
     background-color: $colour-ui-shadow;
     margin-bottom: 1rem;
 }
-a, li {
+a, li, .admin__list {
     color: $colour-secondary;
     text-decoration: none;
     font-weight: 700;
@@ -76,7 +76,6 @@ ul {
     font-weight: 300;
     font-size: 0.6rem;
 }
- 
 .breadcrumb_link:hover {
     font-weight: 700;
     color: $colour-ui-accent;
@@ -85,5 +84,30 @@ ul {
     color: $colour-ui-accent;
 }
 .logout__btn {
- max-width: 100px;
+    max-width: 100px;
+}
+.admin__list {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: start;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $colour-ui-accent;
+
+    .admin__link {
+        margin: 0;
+        padding-left: .5rem;
+    }
+}
+.edit__list {
+    margin: 2rem .5rem;
+    display: flex;
+    justify-content: start;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .edit__link {
+        padding-left: .5rem;
+    }
 }

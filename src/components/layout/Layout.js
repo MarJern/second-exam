@@ -16,6 +16,7 @@ import Container from "react-bootstrap/Container";
 import CreateBreadcrumb from "./Breadcrumb";
 import { Breadcrumb } from "react-bootstrap";
 import Footer from "../footer/Footer"
+import ContentList from "../admin/content/ContentList";
 
 
 function Layout() {
@@ -34,6 +35,7 @@ function Layout() {
             <Route path="/admin" exact element={<Admin />} />
             <Route path="/admin/content" exact element={<ContentPage />} />
             <Route path="/admin/content/add" element={<AddContent />} />
+            <Route path="/admin/content/edit" element={<ContentList />} />
             <Route path="/admin/content/edit/:id" element={<EditContent />} />
         </Routes>
         </>

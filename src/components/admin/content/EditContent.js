@@ -16,10 +16,12 @@ import CreateBreadcrumb from "../../layout/Breadcrumb";
 import { usePageTitle } from "../../common/PageTitle";
 
 const schema = yup.object().shape({
-	title: yup.string().required("Title is required"),
+	title: yup.string().required("Du må legge til en overskrift"),
 });
 
 export default function EditContent() {
+	const [page_title, setPageTitle] = usePageTitle("Rediger tjeneste | Floww Media");
+
 	const [post, setPost] = useState(null);
 	const [updated, setUpdated] = useState(false);
 	const [fetchingPost, setFetchingPost] = useState(true);
@@ -77,29 +79,27 @@ export default function EditContent() {
 		}
 	}
 
-	if (fetchingPost) return <div>Loading...</div>;
+	if (fetchingPost) return <div>Laster...</div>;
 
-	if (fetchError) return <div>Error loading post</div>;
+	if (fetchError) return <div>Problem med å laste siden</div>;
 
 	return (
 		// <AdminPage>
 		<Container>
 			<CreateBreadcrumb link="Rediger post" />
 			{/* <Heading content="Edit Post" /> */}
-
 			<Form onSubmit={handleSubmit(onSubmit)}>
-				{updated && <div className="success">The post was updated</div>}
+				{updated && <div className="success">Tjenesten ble oppdatert</div>}
 				{updateError && <FormError>{updateError}</FormError>}
 				<Form.Group disabled={updatingPost}>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Control name="title" type="text" defaultValue={post.title.rendered} placeholder="Tittel" {...register("title")} className="my-2"/>
+						<Form.Control name="title" type="text" placeholder="Overskrift" defaultValue={post.title.rendered} {...register("title")} className="my-2"/>
 						{errors.title && <FormError>{errors.title.message}</FormError>}
 					</Col>
 					<Col sm={4} md={6} className="p-0">
-						<Form.Control name="content" as="textarea" type="text" defaultValue={post.content.rendered} placeholder="Skriv tekst her" className="my-2 message" />
+						<Form.Control name="content" as="textarea" type="text" defaultValue={post.content.rendered} placeholder="Skriv her" className="my-2 message" />
 					</Col>
-
-					<Button>Update</Button>
+					<Button>Oppdater tjeneste</Button>
 					<hr />
 					<DeleteButton id={post.id} />
 				</Form.Group>

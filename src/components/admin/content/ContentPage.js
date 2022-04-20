@@ -7,17 +7,17 @@ import { usePageTitle } from "../../common/PageTitle";
 import CreateBreadcrumb from "../../layout/Breadcrumb";
 
 export default function ContentPage() {
-	const [page_title, setPageTitle] = usePageTitle("Bloggartikler | Floww media");
+	const [page_title, setPageTitle] = usePageTitle("Rediger tjenester | Floww media");
 	return (
-		<Container className="wrapper my-3 m-auto">
-		{/* <AdminPage> */}
-			<CreateBreadcrumb link="Admin side" />
-			<Heading size="3" title="Bloggartikler" />
-			<p>
-				<Link to="/admin/content/add">Legg til Bloggartikkel</Link>
-			</p>
-			<ContentList />
-		{/* </AdminPage> */}
+		<Container>
+			<main className="wrapper">
+				<CreateBreadcrumb link="Admin side" />
+				<Heading size="3" title="Tjenester" />
+				<p>
+					<Link to="/admin/content/add">Legg til tjeneste</Link>
+				</p>
+				<ContentList />
+			</main>
 		</Container>
 	);
 }

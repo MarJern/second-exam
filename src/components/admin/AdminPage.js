@@ -9,12 +9,14 @@ import CreateBreadcrumb from "../layout/Breadcrumb";
 
 export default function AdminPage({ children }) {
     const [page_title, setPageTitle] = usePageTitle("Admin side | Floww media");
+    
     return (
-        <Container className="wrapper my-3 m-auto">
-            <CreateBreadcrumb link="Admin side" />
-            <Heading title="Admin side"/>
-            <AdminMenu />
-			{children ? children : <p>Select a section</p>}
+        <Container>
+            <main className="wrapper">
+                <CreateBreadcrumb link="Admin side" />
+                <Heading title="Admin side"/>
+                <AdminMenu />
+            </main>
         </Container>
     );
 }

@@ -8,7 +8,7 @@ import H2Title from "../../layout/H2Title";
 import CtaButton from "../../layout/CtaButton";
 
 export default function HomePage() {
-	const [page_title, setPageTitle] = usePageTitle("Floww media");
+	const [page_title, setPageTitle] = usePageTitle("Floww media | SEO rådgivning og innholdsproduksjon");
 	return (
 		<Container>
 			<main className="wrapper">
