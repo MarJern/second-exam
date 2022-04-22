@@ -101,19 +101,3 @@ footer {
         font-size: 2.2rem;
     }
 }
-.error {
-    margin: 1rem auto;
-	padding: 1rem;
-	background: #ebebeb;
-	border-radius: 6px;
-	max-width: 500px;
-}
-.success {
-	padding: 1rem;
-	margin: 10px 0;
-	background: green;
-	color: white;
-}
-.delete__btn {
-    background-color: $colour-ui-accent !important;
-}

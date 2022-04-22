@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import CreateBreadcrumb from "../../layout/Breadcrumb";
 import { usePageTitle } from "../../common/PageTitle";
 import img from "../../../images/people.jpg";
-import CtaButton from "../../layout/CtaButton";
+import CtaButton from "../../common/CtaButton";
 import TjenesteList from "./TjenesteList";
 
 export default function Tjenester() {

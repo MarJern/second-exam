@@ -15,6 +15,7 @@ export default function AdminPage({ children }) {
             <main className="wrapper">
                 <CreateBreadcrumb link="Admin side" />
                 <Heading title="Admin side"/>
+                <p className="intro__text">Velkommen til admin siden. Her kan du legge til og endre tjenester som tilbys på siden.</p>
                 <AdminMenu />
             </main>
         </Container>

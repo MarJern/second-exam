@@ -1,0 +1,27 @@
+.form__component {
+    margin-bottom: 1rem;
+    .form-label {
+        margin-bottom: 0 !important;
+    }
+    .form-control {
+        margin-top: 0rem !important;
+    }
+}
+.textarea {
+    min-height: 200px !important;
+}
+.error {
+    margin: 0 auto 2rem auto;
+    font-weight: 500;
+	max-width: 500px;
+    color: $colour-ui-warning;
+}
+.success {
+	margin: 0 auto 2rem auto;
+    font-weight: 500;
+	max-width: 500px;
+    color: $colour-ui-primary;
+}
+.delete__btn {
+    background-color: $colour-ui-warning !important;
+}

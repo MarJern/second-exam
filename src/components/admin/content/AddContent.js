@@ -17,7 +17,7 @@ import { usePageTitle } from "../../common/PageTitle";
 
 const schema = yup.object().shape({
 	title: yup.string().required("Legg til overskrift"),
-	message: yup.string().required("Beskrivelsen må være på minimum 30 tegn").min(30, "Beskrivelsen må være på minimum 30 tegn."),
+	content: yup.string().required("Beskrivelsen må være på minimum 30 tegn").min(30, "Beskrivelsen må være på minimum 30 tegn."),
 });
 
 export default function AddContent() {
@@ -65,18 +65,22 @@ export default function AddContent() {
 		// <AdminPage>
 		<Container>
 			<CreateBreadcrumb link="Legg til tjeneste" />
-			{/* <Heading title="Om oss" /> */}
+			<Heading title="Legg til tjeneste" />
+			<p className="page__component intro__text">Her kan du redigere eller slette eksisterende tjenester. Vennligst påse at tjenestebeskrivelsen består av mer enn 30 tegn.</p>
 			{serverError && <FormError>{serverError}</FormError>}
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group disabled={submitting}>
-					<Col sm={4} md={6} className="p-0">
-						<Form.Control name="title" type="text" placeholder="Tittel" {...register("title")} className="my-2" />
+					<Form.Label>Tittel</Form.Label>
+					<Col sm={4} md={6} className="p-0 form__component">
+						<Form.Control name="title" type="text" placeholder="Tittel" {...register("title")}/>
 						{errors.title && <FormError>{errors.title.message}</FormError>}
 					</Col>
-					<Col sm={4} md={6} className="p-0">
-						<Form.Control name="content" as="textarea" type="text" placeholder="Skriv her" {...register("message")} className="my-2 message"/>
+					<Col sm={4} md={6} className="p-0 form__component">
+						<Form.Label>Beskrivelse</Form.Label>
+						<Form.Control name="content" as="textarea" type="text" placeholder="Skriv her" {...register("content")} className="message textarea"/>
+						{errors.content && <FormError>{errors.content.message}</FormError>}
 					</Col>
-					<Button type="submit" className="button">{submitting ? "Lagres..." : "Legg til"}</Button>
+					<Button type="submit" className="button btn">{submitting ? "Lagres..." : "Legg til"}</Button>
 				</Form.Group>
 			</Form>
 			</Container>

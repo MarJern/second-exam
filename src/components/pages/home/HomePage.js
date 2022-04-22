@@ -5,7 +5,7 @@ import { usePageTitle } from "../../common/PageTitle";
 import Button from "react-bootstrap/Button"
 import { Link } from "react-router-dom";
 import H2Title from "../../layout/H2Title";
-import CtaButton from "../../layout/CtaButton";
+import CtaButton from "../../common/CtaButton";
 
 export default function HomePage() {
 	const [page_title, setPageTitle] = usePageTitle("Floww media | SEO rådgivning og innholdsproduksjon");
@@ -34,7 +34,7 @@ export default function HomePage() {
 						<li>SEO-tekster og innhold</li>
 					</ul>
 				</section>
-				<CtaButton text="Ønsker du økt trafikk til nettsiden din?" cta="Få SEO rådgivning"/>
+				<CtaButton text="Ønsker du økt trafikk til nettsiden din?" cta="Få SEO rådgivning" />
 			</main>
 		</Container>
 	);

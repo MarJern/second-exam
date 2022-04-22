@@ -16,8 +16,8 @@ import AuthContext from "../../context/AuthContext";
 const url = BASE_URL + TOKEN_PATH;
 
 const schema = yup.object().shape({
-	username: yup.string().required("Vennligst oppgi korrekt brukernavn.").min(3, "Navnet ditt må bestå av minst tre bokstaver."),
-	password: yup.string().required("Vennligst oppgi korrekt passord.").min(3, "Navnet ditt må bestå av minst tre bokstaver."),
+	username: yup.string().required("Vennligst oppgi korrekt brukernavn.").min(3, "Brukernavn må bestå av minimum 3 bokstaver"),
+	password: yup.string().required("Vennligst oppgi korrekt passord.").min(6, "Passord må bestå av minst seks tegn."),
 });
 
 export default function LoginForm() {
@@ -40,8 +40,6 @@ export default function LoginForm() {
 		setSubmitting(true);
 		setLoginError(null);
 
-		// console.log(data);
-
 		try {
 			const response = await axios.post(url, data);
 			console.log("response", response.data);
@@ -58,18 +56,20 @@ export default function LoginForm() {
 	return (
 	
 		<Container >
-			{loginError && <FormError>{loginError}</FormError>}
+			{loginError && <div className="error">{loginError}</div>}
 			<Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group>
-					<Col sm={4} md={6} className="p-0">
-						<Form.Control type="text" name="username" placeholder="Brukernavn" {...register('username')} className="my-2"/>
+					<Col sm={4} md={6} className="p-0 form__component">
+						<Form.Label for="title">Brukernavn</Form.Label>
+						<Form.Control for="username" type="search" name="username" placeholder="Brukernavn" {...register('username')} id="title"/>
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</Col>
-					<Col sm={4} md={6} className="p-0 my-2">
-						<Form.Control name="password" placeholder="Passord" {...register('password')} type="password" />
+					<Col sm={4} md={6} className="p-0 form__component">
+						<Form.Label for="password">Passord</Form.Label>
+						<Form.Control for="password" type="password" name="password" placeholder="Passord" {...register('password')} className="message" id="password"/>
 						{errors.password && <FormError>{errors.password.message}</FormError>}
 					</Col>
-					<Button type="submit" className="button btn btn-primary">{submitting ? "Logger inn" : "Logg inn"}</Button>
+					<Button type="submit" className="button btn btn-primary">{submitting ? "Logger inn..." : "Logg inn"}</Button>
 				</Form.Group>
 			</Form>
 		</Container>

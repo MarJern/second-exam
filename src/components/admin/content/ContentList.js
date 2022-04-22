@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import CreateBreadcrumb from "../../layout/Breadcrumb";
 import Heading from "../../layout/Heading";
 import { usePageTitle } from "../../common/PageTitle";
-import edit from "../../../images/edit-icon.svg";
+import edit from "../../../images/edit-gul.svg";
 
 export default function ContentList() {
 	const [page_title, setPageTitle] = usePageTitle("Rediger tjenester | Floww media");

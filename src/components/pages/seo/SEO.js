@@ -4,7 +4,7 @@ import CreateBreadcrumb from "../../layout/Breadcrumb";
 import { usePageTitle } from "../../common/PageTitle";
 import H2Title from "../../layout/H2Title";
 import H3Title from "../../layout/H3Title";
-import CtaButton from "../../layout/CtaButton";
+import CtaButton from "../../common/CtaButton";
 import desk from "../../../images/desk.jpg";
 
 export default function Seo() {

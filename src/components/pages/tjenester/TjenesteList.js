@@ -37,18 +37,18 @@ export default function TjenesteList() {
 	}
 
 	return (
-		<Card className="page__component tjeneste__card">
-            <Card.Body className="p-0">
-					{posts.map((tjeneste) => {
-                        const {id, title, content } = tjeneste;
-							return (
-                                <div key={id}>
-                                    <h2 className="component__title">{title.rendered}</h2>
-                                    <Card.Text>{content.rendered}</Card.Text>
-                                </div>
-							);
-						})}
-				</Card.Body>
-        </Card>
+		<>
+			{posts.map((tjeneste) => {
+                const {id, title, content } = tjeneste;
+					return (
+                        <Card className="page__component tjeneste__card" key={id}>
+							<Card.Body className="p-0 tjeneste__card">
+								<h2 className="component__title">{title.rendered}</h2>
+								<Card.Text>{content.rendered}</Card.Text>
+							</Card.Body>
+                        </Card>
+					);
+			})}
+		</>
 	);
 };

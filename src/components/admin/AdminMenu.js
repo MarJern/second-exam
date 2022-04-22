@@ -3,9 +3,9 @@ import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import { NavLink } from "react-router-dom";
-import add from "../../images/add-icon.svg";
-import edit from "../../images/edit-icon.svg";
-import logoutIcon from "../../images/logout-icon.svg";
+import add from "../../images/add-gul.svg";
+import edit from "../../images/edit-gul.svg";
+import logoutIcon from "../../images/loggut-gul.svg";
 
 
 export default function AdminMenu() {
@@ -19,14 +19,14 @@ export default function AdminMenu() {
 	}
 
 	return (
-		<nav className="dashboard">
+		<nav>
 			<div className="admin__list">
                 <img src={add} alt=""/>
                 <p className='admin__link'><Link to="/admin/content/add">Legg til tjeneste</Link></p>
             </div>
 			<div className="admin__list" >
                 <img src={edit} alt=""/>
-                <p className='admin__link'><Link to="/admin/content/edit">Endre tjeneste</Link></p>
+                <p className='admin__link'><Link to="/admin/content/edit">Rediger tjeneste</Link></p>
             </div>
 			<div className="admin__list" >
 				{auth ? (
