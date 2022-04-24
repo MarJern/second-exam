@@ -4,8 +4,4 @@ Login details for admin:
 
 Login link found via the footer of the page:
 
-Username: 
-Admin
-
-Password:
-LettÅhuske1990
+Username and Password is private.
