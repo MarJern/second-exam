@@ -3,6 +3,9 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 h2, .button__header {
+    font-size: 1.4rem;
+}
+h3 {
     font-size: 1.2rem;
 }
 .heading {
@@ -21,10 +24,22 @@ h2, .button__header {
 .button__header {
     margin-bottom: 1rem;
     text-align: center;
+
+    @media (min-width: 768px) {
+        text-align: left;
+    }
 }
 .intro__text {
     font-weight: 400;
 }
 .email {
     text-decoration: underline;
+}
+.kontakt{
+    text-decoration: underline;
+    color: $colour-ui-primary;
+    font-weight: 400;
+}
+.highlighted__text {
+    color: $colour-ui-accent;
 }

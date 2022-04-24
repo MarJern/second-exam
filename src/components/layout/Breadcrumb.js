@@ -7,9 +7,6 @@ export default function CreateBreadcrumb({link}) {
                 <Breadcrumb.Item href="#" className="breadcrumb_link">
                     <Link to="/" className="breadcrumb_link">Home</Link>
                 </Breadcrumb.Item>
-                {/* <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-                    Library
-                </Breadcrumb.Item> */}
             <Breadcrumb.Item active className="breadcrumb_link">{link}</Breadcrumb.Item>
         </Breadcrumb>
     );

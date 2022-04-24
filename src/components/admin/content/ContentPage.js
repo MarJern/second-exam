@@ -11,11 +11,11 @@ export default function ContentPage() {
 	return (
 		<Container>
 			<main className="wrapper">
-				<CreateBreadcrumb link="Admin side" />
-				<Heading size="3" title="Tjenester" />
-				<p>
+				<CreateBreadcrumb link="Rediger tjenester" />
+				<Heading title=" Rediger tjenester" />
+				{/* <p>
 					<Link to="/admin/content/add">Legg til tjeneste</Link>
-				</p>
+				</p> */}
 				<ContentList />
 			</main>
 		</Container>

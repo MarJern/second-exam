@@ -18,8 +18,8 @@ import { usePageTitle } from "../../common/PageTitle";
 import CtaButton from "../../common/CtaButton";
 
 const schema = yup.object().shape({
-	title: yup.string().required("Du må legge til en overskrift"),
-	content: yup.string().required("Beskrivelse må bestå av minimum 30 tegn").min(30, "Beskrivelse må bestå av minimum 30 tegn.")
+	title: yup.string().required("Vennligst legg til en overskrift"),
+	content: yup.string().required("Beskrivelse må bestå av minimum 30 tegn.").min(30, "Beskrivelse må bestå av minimum 30 tegn.")
 });
 
 export default function EditContent() {
@@ -93,7 +93,7 @@ export default function EditContent() {
 		<Container>
 			<CreateBreadcrumb link="Rediger tjeneste" />
 			<Heading title="Rediger tjeneste" />
-			<p className="page__component intro__text">Her kan du legge til en ny tjeneste. Vennligst påse at tjenestebeskrivelsen består av mer enn 30 tegn.</p>
+			<p className="page__component intro__text">Her kan redigere eller slette en eksisterende tjeneste. Vennligst påse at tjenestebeskrivelsen består av mer enn 30 tegn.</p>
 			{updated && <div className="success">Tjenesten ble oppdatert</div>}
 			{updateError && <FormError>{updateError}</FormError>}
 			<Form onSubmit={handleSubmit(onSubmit)}>
@@ -108,8 +108,10 @@ export default function EditContent() {
 						<Form.Control name="content" as="textarea" type="search" defaultValue={post.content.rendered} className="message textarea" {...register("content")} id="content"/>
 						{errors.content && <FormError>{errors.content.message}</FormError>}
 					</Col>
-					<button className="button button__link btn-primary btn">Lagre endringer</button>
-					<DeleteButton id={post.id} />
+					<Col sm={4} md={6} className="p-0 form__component btn__container">
+						<button className="button button__link btn-primary btn edit__btn">Lagre endringer</button>
+						<DeleteButton id={post.id} />
+					</Col>
 				</Form.Group>
 			</Form>
 		{/* // </AdminPage> */}

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
-import Dropdown from "react-bootstrap/Dropdown";
 import Nav from "react-bootstrap/Nav";
 import AuthContext from "../../context/AuthContext";
 
@@ -19,7 +18,7 @@ function CreateNav() {
 	return (
 		<Navbar expand="lg" variant="dark" className="nav__bar">
             <Navbar.Brand href="/" className="logo"><span className="bold">Floww</span> <span className="light">media</span></Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" className="d-inline" id="dropdown-autoclose-inside"/>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" className="d-inline d-lg-none" />
             <Navbar.Collapse id="basic-navbar-nav" className="px-3">
                 <Nav className="mr-auto">
                     <NavLink to="/" className="nav-link">Hjem</NavLink>
@@ -27,9 +26,6 @@ function CreateNav() {
 					<NavLink to="/seo" className="nav-link">Om SEO</NavLink>
 					<NavLink to="/oss" className="nav-link">Om oss</NavLink>
 					<NavLink to="/kontakt" className="nav-link">Kontakt oss</NavLink>
-                    {/* <NavLink to="/tjeneste/:param" className="nav-link">
-                        tjeneste
-                    </NavLink> */}
                     {auth ? (
                         <>
                             <NavLink to="/admin" className="nav-link">Admin</NavLink><button className="button logout__btn" onClick={logout}>Logg ut</button>

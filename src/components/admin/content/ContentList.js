@@ -44,9 +44,9 @@ export default function ContentList() {
 
 	return (
 		<Container>
+			<CreateBreadcrumb link="Rediger tjenester" />
+			<Heading title=" Rediger tjenester" />
 			<main className="wrapper">
-				<CreateBreadcrumb link="Rediger tjenester" />
-				<Heading title="Eksisterende tjenester"/>
 				<p className="intro__text">Trykk på tjenesten du ønsker å redigere eller slette:</p>
 				<nav className="admin__link">
 					{posts.map((tjeneste) => {

@@ -32,7 +32,7 @@ export default function AdminMenu() {
 				{auth ? (
                         <>
 							<img src={logoutIcon} alt=""/>
-                            <p className="admin__link" onClick={logout}>Logg ut</p>
+                            <a className="admin__link" onClick={logout}>Logg ut</a>
                         </>
                     ) : (
                         <Link to="/login" className="nav-link hide"></Link>

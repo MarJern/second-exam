@@ -16,8 +16,8 @@ import CreateBreadcrumb from "../../layout/Breadcrumb";
 import { usePageTitle } from "../../common/PageTitle";
 
 const schema = yup.object().shape({
-	title: yup.string().required("Legg til overskrift"),
-	content: yup.string().required("Beskrivelsen må være på minimum 30 tegn").min(30, "Beskrivelsen må være på minimum 30 tegn."),
+	title: yup.string().required("Vennligst legg til en overskrift"),
+	content: yup.string().required("Beskrivelse må bestå av minimum 30 tegn.").min(30, "Beskrivelse må bestå av minimum 30 tegn."),
 });
 
 export default function AddContent() {
@@ -52,7 +52,7 @@ export default function AddContent() {
 		try {
 			const response = await http.post("/wp/v2/posts", data);
 			console.log("response", response.data);
-			navigate("/admin/content");
+			navigate("/tjenester");
 		} catch (error) {
 			console.log("error", error);
 			setServerError(error.toString());
@@ -66,18 +66,18 @@ export default function AddContent() {
 		<Container>
 			<CreateBreadcrumb link="Legg til tjeneste" />
 			<Heading title="Legg til tjeneste" />
-			<p className="page__component intro__text">Her kan du redigere eller slette eksisterende tjenester. Vennligst påse at tjenestebeskrivelsen består av mer enn 30 tegn.</p>
+			<p className="page__component intro__text">Her kan du legge til en ny tjeneste. Vennligst påse at tjenestebeskrivelsen består av mer enn 30 tegn.</p>
 			{serverError && <FormError>{serverError}</FormError>}
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group disabled={submitting}>
-					<Form.Label>Tittel</Form.Label>
+					<Form.Label for="title">Tittel</Form.Label>
 					<Col sm={4} md={6} className="p-0 form__component">
-						<Form.Control name="title" type="text" placeholder="Tittel" {...register("title")}/>
+						<Form.Control name="title" type="search" placeholder="Tittel" {...register("title")} id="title"/>
 						{errors.title && <FormError>{errors.title.message}</FormError>}
 					</Col>
 					<Col sm={4} md={6} className="p-0 form__component">
-						<Form.Label>Beskrivelse</Form.Label>
-						<Form.Control name="content" as="textarea" type="text" placeholder="Skriv her" {...register("content")} className="message textarea"/>
+						<Form.Label for="content">Beskrivelse</Form.Label>
+						<Form.Control name="content" as="textarea" type="text" placeholder="Skriv her" {...register("content")} className="message textarea" id="content"/>
 						{errors.content && <FormError>{errors.content.message}</FormError>}
 					</Col>
 					<Button type="submit" className="button btn">{submitting ? "Lagres..." : "Legg til"}</Button>

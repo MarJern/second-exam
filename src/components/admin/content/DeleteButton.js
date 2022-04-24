@@ -25,7 +25,7 @@ export default function DeleteButton({ id }) {
 	}
 
 	return (
-		<button type="button" className="delete__btn button btn button__link btn-primary" onClick={handleDelete}>
+		<button type="button" className="delete__btn button btn button__link btn-primary edit__btn" onClick={handleDelete}>
 			{error ? "Error" : "Delete"}
 		</button>
 	);

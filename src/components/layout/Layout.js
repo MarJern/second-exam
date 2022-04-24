@@ -10,12 +10,7 @@ import Admin from "../admin/AdminPage"
 import ContentPage from "../admin/content/ContentPage";
 import AddContent from "../admin/content/AddContent";
 import EditContent from "../admin/content/EditContent";
-import { AuthProvider } from "../../context/AuthContext";
 import CreateNav from './Nav';
-import Container from "react-bootstrap/Container";
-import CreateBreadcrumb from "./Breadcrumb";
-import { Breadcrumb } from "react-bootstrap";
-import Footer from "../footer/Footer"
 import ContentList from "../admin/content/ContentList";
 
 
@@ -25,7 +20,6 @@ function Layout() {
         <CreateNav/>
         <Routes>
             <Route path="/" exact element={<HomePage />} />
-            {/* <Route path="/detail/:param" element={<Detail />} /> */}
             <Route path="/tjenester" element={<Tjenester />} />
             <Route path="/seo" element={<Seo />} />
             <Route path="/oss" element={<Oss />} />

@@ -24,9 +24,9 @@ export default function Footer() {
             <Row className="flex-column">
                 <FooterNav />
             </Row>
-            <Row>
-                <nav>
-                    <Link to="/personvern" className="nav-link footer__link">Rettningslinjer for personvern</Link>
+            <Row >
+                <nav className='personvern__wrapper'>
+                    <Link to="/personvern" className="nav-link footer__link personvern">Rettningslinjer for personvern</Link>
                 </nav>
             </Row>
         </footer>

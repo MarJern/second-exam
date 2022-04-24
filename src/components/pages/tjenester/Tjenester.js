@@ -15,12 +15,12 @@ export default function Tjenester() {
 			<Heading title="Tjenester" />
 			<main className="wrapper">
 				<section>
-					<img className="image" src={img} alt="SEO strategi meeting"/>
+					<img className="image" src={img} alt="SEO strategi møte"/>
 				</section>
 				<article className="page__component">
 					<TjenesteList />
 				</article>
-				<CtaButton text="La oss hjelpe deg med å bygge synlighet på nett" cta="Kontakt oss"/>
+				<CtaButton text="Vi skreddersyr en strategi for å øke din rangering i søkemotorer" cta="Kontakt oss"/>
 			</main>
 		</Container>
 	);

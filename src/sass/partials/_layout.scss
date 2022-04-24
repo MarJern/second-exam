@@ -15,9 +15,11 @@ body {
     font-family: $font-primary;
     font-weight: 300;
     margin: 0 auto;
+    font-size: 18px;
 }
 .logo {
     padding-left: 0.75rem;
+    font-size: 1.4rem;
     .light {
         color: $colour-ui-primary;
     }
@@ -25,7 +27,14 @@ body {
 .wrapper {
     flex: 1 0 auto;
     margin: 0 auto;
+
+    @media (min-width: 481px) {
+        max-width: 80vw; }
+    
+    @media (min-width: 992px) {
+        max-width: 60vw; }
 }
+
 .page__component {
     margin-bottom: 2rem;
 }
@@ -65,6 +74,11 @@ footer {
     p {
         margin: 0 0 0 .5rem;
     }
+
+    @media (min-width: 768px) {
+        margin-top: 4rem;
+    }
+
 }
 .hide {
     display: none;
@@ -100,4 +114,40 @@ footer {
         margin-bottom: 0;
         font-size: 2.2rem;
     }
+}
+.accordion-item, .accordion-button {
+    background-color: $colour-primary !important;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0 !important;
+}
+.accordion-button:not(.collapsed) {
+    background-color: $colour-primary !important;
+    border: none;
+    box-shadow: none;
+    border-left: 3px solid $colour-ui-primary;
+}
+.accordion-button {
+    color: white !important;
+    padding-left: .5rem;
+    // border-left: 2px solid $colour-ui-accent;
+}
+.accordion-button::after {
+    display: none;
+}
+.accordion-button:hover {
+    text-decoration: underline;
+    // border-left: 3px solid $colour-ui-primary;
+}
+.accordion-button:active {
+    text-decoration: underline;
+    // border-left: 3px solid $colour-ui-primary;
+}
+.accordion-item {
+    margin-bottom: 1rem;
+}
+.accordion-header {
+    // font-size: 1.2rem !important;
+    // font-weight: 500;
+    text-decoration: underline;
 }

@@ -22,7 +22,7 @@ export default function Oss() {
 					</section>
 					<section className="page__component">
 						<H2Title title="Hvilke personopplysninger har vi om deg" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Avhengig av hvilken informasjon du gir oss, hvordan du bruker våre tjenester, og hvilke tillatelser du gir oss, har vi disse opplysningene om deg:</p>
 							<ul>
 								<li>Kommunikasjon: Informasjon du gir oss når du har kontakt med vårt kundesenter. Herunder, men ikke begrenset til, e-poster, telefon og kontaktskjemaet.
@@ -34,7 +34,7 @@ export default function Oss() {
 					</section>
 					<section className="page__component">
 						<H2Title title="Hva bruker vi personopplysningene til" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Vi bruker personopplysningene dine til følgende formål:</p>
 							<ol>
 								<li>Tilby nettside: Vi bruker opplysninger for å tilpasse vår nettside til det tekniske utstyret du bruker.
@@ -48,7 +48,7 @@ export default function Oss() {
 					</section>
 					<section className="page__component">
 						<H2Title title="Hvem deler vi personopplysninger med" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Vi deler aldri personopplysninger med tredjeparter, med mindre du er spesifikt informert om dette og det er en nødvendighet for å levere en tjeneste. Dette vil kun bli gjort etter samtykke fra deg.</p>
 							<p>I enkelttilfeller kan vi utlevere personopplysninger dersom det kreves, eksempelvis til offentlige myndigheter, ved mistanke om lovbrudd.</p>
 							<p>Vi kan for øvrig dele anonymiserte opplysninger med samarbeidspartnere for bl.a. markedsanalyser, annonsering og tjenesteutvikling.</p>
@@ -56,14 +56,14 @@ export default function Oss() {
 					</section>
 					<section className="page__component">
 						<H2Title title="Hvor lenge lagrer vi personopplysninger" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Vi lagrer opplysninger om deg, kun så lenge det er nødvendig for å oppnå formålet de ble innhentet for, eller dersom vi er pålagt å lagre opplysningene. Opplysningene vil slettes eller anonymiseres når de ikke lengre er nødvendige for å oppnå formålet.</p>
 							<p>Dersom du avslutter kundeforholdet ditt hos oss vil all persontilknyttet data slettes innen minst 6 måneder. Dersom du ønsker dine opplysninger og data utlevert, ber vi deg ta kontakt med oss på kontakt@flowwmedia.no.</p>
 						</div>
 					</section>
 					<section className="page__component">
 						<H2Title title="Dine rettigheter" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Avhengig av hvilken informasjon du gir oss, hvordan du bruker våre tjenester, og hvilke tillatelser du gir oss, har vi disse opplysningene om deg:</p>
 							<ul>
 								<li>Gi deg ytterligere informasjon om hvordan vi behandler dine personopplysninger.</li>
@@ -81,19 +81,19 @@ export default function Oss() {
 					</section>
 					<section className="page__component">
 						<H2Title title="Cookies" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Vi bruker cookies på våre nettsider for å sikre funksjonalitet på nettsiden, analysere nettrafikk og se hvilke områder på vårt nettsted du har besøkt. All data som lagres til dette formålet vil bli anonymisert.</p>
 						</div>
 					</section>
 					<section className="page__component">
 						<H2Title title="Endringer i personvernerklæringen" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Vi vil kunne oppdatere personvernerklæringen fra tid til annen. Du vil få beskjed om endringer av betydning. Du vil alltid finne siste versjon av vår personvernerklæring på nettsiden.</p>
 						</div>
 					</section>
 					<section className="page__component">
 						<H2Title title="Kontaktinformasjon" />
-						<div className="component__content intro__text">
+						<div className="component__content">
 							<p>Hvis du ønsker å komme i kontakt med oss, kan du benytte følgende kontaktinformasjon:</p>
 							<ul>
 								<li>458 43 554</li>

@@ -9,7 +9,6 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
 import { BASE_URL, TOKEN_PATH } from "../../constants/api";
 import AuthContext from "../../context/AuthContext";
 
@@ -60,7 +59,7 @@ export default function LoginForm() {
 			<Form disabled={submitting} onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group>
 					<Col sm={4} md={6} className="p-0 form__component">
-						<Form.Label for="title">Brukernavn</Form.Label>
+						<Form.Label for="username">Brukernavn</Form.Label>
 						<Form.Control for="username" type="search" name="username" placeholder="Brukernavn" {...register('username')} id="title"/>
 						{errors.username && <FormError>{errors.username.message}</FormError>}
 					</Col>
